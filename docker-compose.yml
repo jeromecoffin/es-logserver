@@ -8,6 +8,7 @@ services:
       - "discovery.type=single-node"
     networks:
       - lognet
+    #data persitence
     volumes:
       - esdata:/usr/share/elasticsearch/data
  
@@ -16,6 +17,7 @@ services:
     container_name: kibana
     environment:
       SERVER_NAME : kibana
+      #accessing elasticsearch url and port inside the subnet
       ELASTICSEARCH_URL : http://elasticsearch:9200
     networks:
       - lognet
@@ -23,6 +25,7 @@ services:
   proxy:
     build : ./nginx
     container_name : proxy
+    #the log server is accessible by 8080 port and redirected to 80
     ports:
       - "8080:80"
     networks:
