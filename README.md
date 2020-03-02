@@ -13,6 +13,6 @@ Elastic Search
 
 Nginx
 - Internal port : 80
-- External port : 8080 *
+- External port : 8080
 - Image : nginx
 - Configuration : nginx.conf and .htpasswd
