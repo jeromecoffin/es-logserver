@@ -1,7 +1,7 @@
 # es-logserver
 log server with Docker, Elasticsearch, Kibana and Nginx
 
-![diagram](/diagram.png)
+![diagram](/diagramlogstash.png)
 
 [Kibana](https://www.elastic.co/products/kibana)
 - Internal Port : 5601
