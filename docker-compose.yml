@@ -21,6 +21,18 @@ services:
       ELASTICSEARCH_URL : http://elasticsearch:9200
     networks:
       - lognet
+  
+  logstash:
+    build : ./logstash
+    links:
+      - elasticsearch
+    volumes:
+      - ./etc/logstash/pipeline:/usr/share/logstash/pipeline
+    command: logstash -f /usr/share/logstash/pipeline/logstash.yml
+    depends_on:
+      - elasticsearch
+    networks:
+      - lognet
 
   proxy:
     build : ./nginx

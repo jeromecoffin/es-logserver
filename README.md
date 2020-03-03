@@ -23,6 +23,7 @@ log server with Docker, Elasticsearch, Kibana and Nginx
 
 1) to start with
 ```
+$ docker-compose build
 $ docker-compose up -d
 ```
 
