@@ -24,7 +24,7 @@ log server with Docker, Elasticsearch, Kibana and Nginx
 - Port : 5000/tcp
 - Port : 5000/udp
 - Port : 9600
-- miage : docker.elastic.co/logstash/logstash:6.8.6
+- Image : docker.elastic.co/logstash/logstash:6.8.6
 
 
 ## Quick Start Guide
