@@ -21,18 +21,6 @@ services:
       ELASTICSEARCH_URL : http://elasticsearch:9200
     networks:
       - lognet
-  
-  logstash:
-    build : ./logstash
-    links:
-      - elasticsearch
-    volumes:
-      - ./etc/logstash/pipeline:/usr/share/logstash/pipeline
-    command: logstash -f /usr/share/logstash/pipeline/logstash.yml
-    depends_on:
-      - elasticsearch
-    networks:
-      - lognet
 
   proxy:
     build : ./nginx
@@ -42,6 +30,22 @@ services:
       - "8080:80"
     networks:
       - lognet
+
+  logstash:
+    build : ./logstash
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+    ports:
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - lognet
+    depends_on:
+      - elasticsearch
  
 volumes:
    esdata:
