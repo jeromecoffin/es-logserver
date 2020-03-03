@@ -1,11 +1,14 @@
 # es-logserver
+
 log server with Docker, Elasticsearch, Kibana and Nginx
+
 
 ![diagram](/diagramlogstash.png)
 
+
 [Kibana](https://www.elastic.co/products/kibana)
 - Internal Port : 5601
-- Base Image : docker.elastic.co/kibana/kibana:6.1.2
+- Image : docker.elastic.co/kibana/kibana:6.1.2
 
 [ElasticSearch](https://www.elastic.co/products/elasticsearch)
 - Internal Port : 9200
@@ -17,6 +20,11 @@ log server with Docker, Elasticsearch, Kibana and Nginx
 - Image : nginx
 - Configuration : nginx.conf and .htpasswd
 
+[Logstash](https://www.elastic.co/products/logstash)
+- Port : 5000/tcp
+- Port : 5000/udp
+- Port : 9600
+- miage : docker.elastic.co/logstash/logstash:6.8.6
 
 
 ## Quick Start Guide
@@ -36,5 +44,3 @@ $ docker-compose ps -a
 ## Soon
 
 [Filebeat](https://www.elastic.co/products/beats/filebeat)
-
-[Logstash](https://www.elastic.co/products/logstash)
