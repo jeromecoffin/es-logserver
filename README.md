@@ -21,10 +21,16 @@ log server with Docker, Elasticsearch, Kibana and Nginx
 
 ## Quick Start Guide
 
-1) to start with
+Import log file
+```
+$ cat /path/to/file/file.log | nc -c localhost 5000 
+```
+
+Launch the log server
 ```
 $ docker-compose build
 $ docker-compose up -d
+$ docker-compose ps -a
 ```
 
 ## Soon
