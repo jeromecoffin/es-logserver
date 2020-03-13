@@ -26,6 +26,9 @@ log server with Docker, Elasticsearch, Kibana and Nginx
 - Port : 9600
 - Image : docker.elastic.co/logstash/logstash:6.8.6
 
+[Filebeat](https://www.elastic.co/products/beats/filebeat)
+- on progress
+
 
 ## Quick Start Guide
 
@@ -40,7 +43,3 @@ $ docker-compose build
 $ docker-compose up -d
 $ docker-compose ps -a
 ```
-
-## Soon
-
-[Filebeat](https://www.elastic.co/products/beats/filebeat)
