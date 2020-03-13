@@ -3,7 +3,7 @@
 log server with Docker, Elasticsearch, Kibana and Nginx
 
 
-![diagram](/diagramlogstash.png)
+![diagram](/images/diagramprojet.png)
 
 
 [Kibana](https://www.elastic.co/products/kibana)
