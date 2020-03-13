@@ -46,7 +46,18 @@ services:
       - lognet
     depends_on:
       - elasticsearch
- 
+
+  filbeat:
+    build : ./filebeat
+    volumes:
+      - ./filebeat/config:/etc/filebeat
+      - ./logs:/logs
+    networks:
+      - lognet
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+
 volumes:
    esdata:
      driver: local
